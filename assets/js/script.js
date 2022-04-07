@@ -6,12 +6,15 @@ var createTaskHandler = function (event) {
   //  Prevents the browser window from automatically refreshing
   event.preventDefault();
 
+  var taskNameInput = document.querySelector("input[name='task-name']").value;
+  console.dir(taskNameInput);
+
   var listItemEl = document.createElement("li");
   listItemEl.className = "task-item";
-  listItemEl.textContent = "This is a new task";
+  listItemEl.textContent = taskNameInput;
   tasksToDoEl.appendChild(listItemEl);
 
-//   console.log(event);
+  //   console.log(event);
 };
 
 formEl.addEventListener("submit", createTaskHandler);
