@@ -10,14 +10,31 @@ var createTaskHandler = function (event) {
   //   console.dir(taskNameInput);
 
   var taskTypeInput = document.querySelector("select[name='task-type']").value;
-  console.log(taskTypeInput);
+//   console.log(taskTypeInput);
 
+  // create list item
   var listItemEl = document.createElement("li");
   listItemEl.className = "task-item";
-  listItemEl.textContent = taskNameInput;
+
+  // create div to hold info and add to list item
+  var taskInfoEl = document.createElement("div");
+  //   give it a class name
+  taskInfoEl.className = "task-info";
+  // add HTML content to div
+  taskInfoEl.innerHTML =
+    "<h3 class='task-name'>" +
+    taskNameInput +
+    "</h3><span class='task-type'>" +
+    taskTypeInput +
+    "</span>";
+
+  listItemEl.appendChild(taskInfoEl);
+
+  // add entire list item to list
   tasksToDoEl.appendChild(listItemEl);
 
   //   console.log(event);
+  console.dir(listItemEl);
 };
 
 formEl.addEventListener("submit", createTaskHandler);
