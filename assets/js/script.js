@@ -7,7 +7,10 @@ var createTaskHandler = function (event) {
   event.preventDefault();
 
   var taskNameInput = document.querySelector("input[name='task-name']").value;
-  console.dir(taskNameInput);
+  //   console.dir(taskNameInput);
+
+  var taskTypeInput = document.querySelector("select[name='task-type']").value;
+  console.log(taskTypeInput);
 
   var listItemEl = document.createElement("li");
   listItemEl.className = "task-item";
